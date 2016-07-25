@@ -6,7 +6,7 @@
 <html ng-app="myAlbum">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="icon" href="resources/images/fav.ico">
+<link rel="icon" href="resources/images/logo.jpg">
 
 <title>View all products</title>
 

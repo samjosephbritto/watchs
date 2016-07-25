@@ -162,6 +162,16 @@
 	<div class="container">
 		<br /> <br /> <br /> <br /> <br /> <br /> <br />
 
+<div><br/>
+<%if(request.getParameter("msg")!=null){%>
+	
+	<%=request.getParameter("msg")%>
+	
+<%} %>
+
+
+<br/>
+</div>
 		<h1>Please Enter Product Information</h1>
 		<br />
 		<form:form action="add" enctype="multipart/form-data" method="post">

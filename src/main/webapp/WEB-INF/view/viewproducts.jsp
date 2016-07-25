@@ -54,6 +54,8 @@
     				
 		<p style="text-align: justify;">
 		<div ng-app="myAlbum" ng-controller="namesCtrl">
+		<p>Search</p>
+		<p><input type="text" ng-model="search"></p>
 	 
 			 
 			<br/>

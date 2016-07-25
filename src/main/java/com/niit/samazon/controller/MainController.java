@@ -58,8 +58,7 @@ public class MainController {
 		Gson gson = new Gson();
 		//String temp = gson.toJson(dao.getAllProduct());
 		String temp = gson.toJson( productService.getAllProduct());
-		return new ModelAndView("productinfo", "data", temp);
-	}
+		return new ModelAndView("productinfo", "data", temp);	}
 
 
 
@@ -114,10 +113,6 @@ public class MainController {
 
 
 
-	@RequestMapping("product")
-	public ModelAndView product() {
-		return new ModelAndView("product", "command", new Product());
-	}
 
 
 
@@ -252,6 +247,10 @@ public class MainController {
 
 
 
+	@RequestMapping("product")
+	public ModelAndView product() {
+		return new ModelAndView("product", "command", new Product());
+	}
 	@RequestMapping("add")
 	ModelAndView storeproduct(HttpServletRequest request, @RequestParam("file") MultipartFile file,
 			@ModelAttribute("ekart") @Valid Product p) {
@@ -261,7 +260,7 @@ public class MainController {
 				fileName = file.getOriginalFilename();
 				byte[] bytes = file.getBytes();
 				BufferedOutputStream buffStream = new BufferedOutputStream(new FileOutputStream(
-						new File("G:/SAM_DT_WORKSPACE_19july/watchs/src/main/webapp/resources/images" + fileName)));
+						new File("G:/SAM_DT_WORKSPACE_19july/watchs/src/main/webapp/resources/images/" + fileName)));
 				buffStream.write(bytes);
 				buffStream.close();
 				error = "You have successfully uploaded " + fileName;
@@ -276,8 +275,8 @@ public class MainController {
 		} catch (Exception e) {
 			return new ModelAndView("product", "command", new Product());
 		}
-		File oldName = new File("G:/SAM_DT_WORKSPACE_19july/watchs/src/main/webapp/resources/images" + fileName);
-		File newName = new File("G:/SAM_DT_WORKSPACE_19july/watchs/src/main/webapp/resources/images" + p.getPid()
+		File oldName = new File("G:/SAM_DT_WORKSPACE_19july/watchs/src/main/webapp/resources/images/" + fileName);
+		File newName = new File("G:/SAM_DT_WORKSPACE_19july/watchs/src/main/webapp/resources/images/" + p.getPid()
 				+ fileName.substring(fileName.indexOf(".")));
 		if (oldName.renameTo(newName)) {
 			System.out.println(p.getPid());
@@ -285,7 +284,7 @@ public class MainController {
 		}
 		Gson gson = new Gson();
 		String temp = gson.toJson(productService.getAllProduct());
-		return new ModelAndView("redirect:/viewproducts", "msg", error);
+		return new ModelAndView("redirect:/product", "msg", error);
 	}
 
 
@@ -299,11 +298,7 @@ public class MainController {
 		// String temp= gson.toJson(productbean);
 		// return new ModelAndView( "addcart", "data", temp) ;
 		return new ModelAndView("addcart", "product", p);
-	}
-	// public ModelAndView addcart(HttpServletRequest
-	// request,@RequestParam("pid") String pid,@ModelAttribute("furniture")
-	// Product productbean, BindingResult result) {
-
+	} 
 
 
 

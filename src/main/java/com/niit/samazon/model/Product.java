@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,18 +23,22 @@ public class Product {
 	
 	@Column
 	@NotEmpty(message="Enter your Product Name")
+	
 	String pname;
 	
 	@Column
 	@NotEmpty(message="Enter Brand Name")
+	
 	String brand;
 	
 	@Column
 	@NotEmpty(message="Enter your Product Type")
+	
 	String ptype;
 	
 	@Column
 	@NotEmpty(message="Enter your Product Price")
+	
 	String price;
 
 	@Column

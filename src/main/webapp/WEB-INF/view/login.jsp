@@ -49,7 +49,8 @@
                 <tr>
                    <td><h3><span class="label">Password </span></h3></td>
                     <td><input type='password' name='j_password'></td>
-                </tr>
+               
+               
                 <tr>
                     <td colspan="2">&nbsp;</td>
                 </tr>

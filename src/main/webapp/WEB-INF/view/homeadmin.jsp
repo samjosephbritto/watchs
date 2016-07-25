@@ -157,7 +157,10 @@ background-color: aqua;
 		</div>
 	</div>
 	<!-- Nav bar Ends -->
+	
+	
 <%request.getSession().setAttribute("author", request.getParameter("author"));%>
+
 	<div class="carousel slide carousel-fade" data-ride="carousel">
 
 		<!-- Wrapper for slides -->

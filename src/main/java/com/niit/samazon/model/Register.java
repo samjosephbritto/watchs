@@ -4,7 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -19,22 +21,27 @@ public class Register {
 		 
 	@Column
 	@NotNull(message="Enter your First Name")
+	@Size(min=3,max=10)
 	String fname;
 	
 	@Column
 	@NotNull(message="Enter your Last Name")
+	@Size(min=5,max=10)
 	String lname;
 	
 	@Column
+	@NotEmpty
 	@Email(message="Invalid Email Id")
 	String email;
 	
 	@Column
 	@NotNull(message="Must Enter your phone number")
+	@Min(10)
 	String phone;
 	
 	@Column
 	@NotEmpty(message="Enter UserName for login")
+	@Size(min=5,max=10)
 	String uname;
 	
 	@Column
